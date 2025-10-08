@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Padel Live Scores – Mobile (Updated Names)</title>
+<style>
+  :root { --bg:#0e1116; --panel:#151a22; --muted:#a8b3c7; --acc:#65AAC2; --acc2:#ADBA5E; --line:#2a3340; }
+  html, body { background:var(--bg); color:#eef2f7; font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; margin:0; padding:16px; }
+  h1 { font-size:22px; margin:0 0 8px; font-weight:800; }
+  .sub { color:var(--muted); margin-bottom:14px; line-height:1.35; }
+  .grid { display:grid; grid-template-columns: 1fr; gap:14px; }
+  @media (min-width: 1100px) { .grid { grid-template-columns: 1fr 1fr; gap:18px; } }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:16px; padding:12px; box-shadow: 0 4px 16px rgba(0,0,0,.25); }
+  .title { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:8px; }
+  .left { display:flex; align-items:center; gap:10px; }
+  .pill { font-size:12px; padding:3px 8px; border-radius:999px; background:#1c2430; color:var(--muted); border:1px solid var(--line); white-space:nowrap; }
+  .tableWrap { overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid var(--line); border-radius:12px; }
+  .tableWrap::-webkit-scrollbar { height:8px; }
+  .tableWrap::-webkit-scrollbar-thumb { background:#374355; border-radius:8px; }
+  table { width:100%; border-collapse:separate; border-spacing:0; min-width:860px; }
+  #matchesTbl { min-width:720px; }
+  th, td { border-bottom:1px solid var(--line); padding:10px 10px; text-align:left; font-size:14px; }
+  th { color:#cfe3ff; font-weight:700; background:#10161f; position:sticky; top:0; z-index:1; }
+  tr:hover td { background:rgba(255,255,255,0.02); }
+  .num { color:var(--muted); width:36px; }
+  .name { font-weight:700; letter-spacing:.2px; }
+  .round { text-align:center; min-width:74px; }
+  .total { font-weight:800; color:#fff; }
+  .roundHdr td { background:#0f1420; color:#9ec8ff; font-weight:800; letter-spacing:.3px; text-transform:uppercase; }
+  .toolbar { display:flex; gap:10px; flex-wrap:wrap; }
+  button { background:linear-gradient(180deg, var(--acc), #3b8aa2); color:#001018; border:none; border-radius:10px; padding:10px 12px; font-weight:800; cursor:pointer; font-size:14px; }
+  .score-in { width:88px; background:#0d1219; color:#fff; border:1px solid var(--line); border-radius:10px; padding:10px 10px; font-size:16px; line-height:22px; }
+  .bad { outline:2px solid #b93a3a; }
+  .ok { outline:2px solid #2f8f4e33; }
+  .hint { color:var(--muted); font-size:12px; margin-top:6px; }
+  @media (max-width: 600px) {
+    h1 { font-size:18px; }
+    .card { padding:10px; border-radius:14px; }
+    th, td { padding:10px 8px; font-size:13px; }
+    .score-in { width:84px; font-size:16px; }
+    .pill { font-size:11px; }
+  }
+</style>
+</head>
+<body>
+  <h1>Padel live link (Phone-friendly, Names Updated)</h1>
+  <div class="sub">Only names changed. Enter scores in <span class="pill">Matches</span> as <b>A-B</b>. <b>Scores</b> updates instantly.</div>
+  <div class="grid">
+    <div class="card">
+      <div class="title">
+        <div class="left"><span class="pill">A1:J9</span><h2 style="margin:0;font-size:16px;">Scores (all players)</h2></div>
+        <div class="toolbar">
+          <button id="clear">Clear scores</button>
+        </div>
+      </div>
+      <div class="tableWrap">
+        <table id="scoresTbl" aria-label="Scores table">
+          <thead>
+            <tr>
+              <th class="num">#</th>
+              <th>Name</th>
+              <th class='round'>Round 1</th><th class='round'>Round 2</th><th class='round'>Round 3</th><th class='round'>Round 4</th><th class='round'>Round 5</th><th class='round'>Round 6</th><th class='round'>Round 7</th>
+              <th class="total">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-player='Hessa'><td class='num'>1</td><td class='name'>Hessa</td><td class='round' data-round='Round 1'>0</td><td class='round' data-round='Round 2'>0</td><td class='round' data-round='Round 3'>0</td><td class='round' data-round='Round 4'>0</td><td class='round' data-round='Round 5'>0</td><td class='round' data-round='Round 6'>0</td><td class='round' data-round='Round 7'>0</td><td class='total'>0</td></tr><tr data-player='Nina'><td class='num'>2</td><td class='name'>Nina</td><td class='round' data-round='Round 1'>0</td><td class='round' data-round='Round 2'>0</td><td class='round' data-round='Round 3'>0</td><td class='round' data-round='Round 4'>0</td><td class='round' data-round='Round 5'>0</td><td class='round' data-round='Round 6'>0</td><td class='round' data-round='Round 7'>0</td><td class='total'>0</td></tr><tr data-player='Ornella'><td class='num'>3</td><td class='name'>Ornella</td><td class='round' data-round='Round 1'>0</td><td class='round' data-round='Round 2'>0</td><td class='round' data-round='Round 3'>0</td><td class='round' data-round='Round 4'>0</td><td class='round' data-round='Round 5'>0</td><td class='round' data-round='Round 6'>0</td><td class='round' data-round='Round 7'>0</td><td class='total'>0</td></tr><tr data-player='Noura'><td class='num'>4</td><td class='name'>Noura</td><td class='round' data-round='Round 1'>0</td><td class='round' data-round='Round 2'>0</td><td class='round' data-round='Round 3'>0</td><td class='round' data-round='Round 4'>0</td><td class='round' data-round='Round 5'>0</td><td class='round' data-round='Round 6'>0</td><td class='round' data-round='Round 7'>0</td><td class='total'>0</td></tr><tr data-player='Fatima Q'><td class='num'>5</td><td class='name'>Fatima Q</td><td class='round' data-round='Round 1'>0</td><td class='round' data-round='Round 2'>0</td><td class='round' data-round='Round 3'>0</td><td class='round' data-round='Round 4'>0</td><td class='round' data-round='Round 5'>0</td><td class='round' data-round='Round 6'>0</td><td class='round' data-round='Round 7'>0</td><td class='total'>0</td></tr><tr data-player='Nouf'><td class='num'>6</td><td class='name'>Nouf</td><td class='round' data-round='Round 1'>0</td><td class='round' data-round='Round 2'>0</td><td class='round' data-round='Round 3'>0</td><td class='round' data-round='Round 4'>0</td><td class='round' data-round='Round 5'>0</td><td class='round' data-round='Round 6'>0</td><td class='round' data-round='Round 7'>0</td><td class='total'>0</td></tr><tr data-player='Silvia'><td class='num'>7</td><td class='name'>Silvia</td><td class='round' data-round='Round 1'>0</td><td class='round' data-round='Round 2'>0</td><td class='round' data-round='Round 3'>0</td><td class='round' data-round='Round 4'>0</td><td class='round' data-round='Round 5'>0</td><td class='round' data-round='Round 6'>0</td><td class='round' data-round='Round 7'>0</td><td class='total'>0</td></tr><tr data-player='MJ'><td class='num'>8</td><td class='name'>MJ</td><td class='round' data-round='Round 1'>0</td><td class='round' data-round='Round 2'>0</td><td class='round' data-round='Round 3'>0</td><td class='round' data-round='Round 4'>0</td><td class='round' data-round='Round 5'>0</td><td class='round' data-round='Round 6'>0</td><td class='round' data-round='Round 7'>0</td><td class='total'>0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="hint">Totals = sum of all rounds per player.</div>
+    </div>
+
+    <div class="card">
+      <div class="title">
+        <div class="left"><span class="pill">A11:H32</span><h2 style="margin:0;font-size:16px;">Matches (enter scores)</h2></div>
+      </div>
+      <div class="tableWrap">
+        <table id="matchesTbl" aria-label="Matches table">
+          <thead>
+            <tr>
+              <th>Match #</th>
+              <th>player1</th>
+              <th>player2</th>
+              <th></th>
+              <th></th>
+              <th>player 3</th>
+              <th>player4</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="hint">Left score → player1+player2, right score → player3+player4. Supports <b>6-3</b> or <b>7:5</b>.</div>
+    </div>
+  </div>
+
+<script>
+const players = ["Hessa", "Nina", "Ornella", "Noura", "Fatima Q", "Nouf", "Silvia", "MJ"];
+const rounds = ["Round 1", "Round 2", "Round 3", "Round 4", "Round 5", "Round 6", "Round 7"];
+const rawEntries = [{"type": "round", "label": "Round 1"}, {"type": "match", "round": "Round 1", "label": "Match 1", "player1": "MJ", "player2": "Hessa", "player3": "Nina", "player4": "Nouf", "score": ""}, {"type": "match", "round": "Round 1", "label": "Match 2", "player1": "Ornella", "player2": "Noura", "player3": "Fatima Q", "player4": "Silvia", "score": ""}, {"type": "round", "label": "Round 2"}, {"type": "match", "round": "Round 2", "label": "Match 3", "player1": "MJ", "player2": "Nina", "player3": "Ornella", "player4": "Silvia", "score": ""}, {"type": "match", "round": "Round 2", "label": "Match 4", "player1": "Noura", "player2": "Fatima Q", "player3": "Nouf", "player4": "Hessa", "score": ""}, {"type": "round", "label": "Round 3"}, {"type": "match", "round": "Round 3", "label": "Match 5", "player1": "MJ", "player2": "Ornella", "player3": "Noura", "player4": "Hessa", "score": ""}, {"type": "match", "round": "Round 3", "label": "Match 6", "player1": "Fatima Q", "player2": "Nouf", "player3": "Silvia", "player4": "Nina", "score": ""}, {"type": "round", "label": "Round 4"}, {"type": "match", "round": "Round 4", "label": "Match 7", "player1": "MJ", "player2": "Noura", "player3": "Fatima Q", "player4": "Nina", "score": ""}, {"type": "match", "round": "Round 4", "label": "Match 8", "player1": "Nouf", "player2": "Silvia", "player3": "Hessa", "player4": "Ornella", "score": ""}, {"type": "round", "label": "Round 5"}, {"type": "match", "round": "Round 5", "label": "Match 9", "player1": "MJ", "player2": "Fatima Q", "player3": "Nouf", "player4": "Ornella", "score": ""}, {"type": "match", "round": "Round 5", "label": "Match 10", "player1": "Silvia", "player2": "Hessa", "player3": "Nina", "player4": "Noura", "score": ""}, {"type": "round", "label": "Round 6"}, {"type": "match", "round": "Round 6", "label": "Match 11", "player1": "MJ", "player2": "Nouf", "player3": "Silvia", "player4": "Noura", "score": ""}, {"type": "match", "round": "Round 6", "label": "Match 12", "player1": "Hessa", "player2": "Nina", "player3": "Ornella", "player4": "Fatima Q", "score": ""}, {"type": "round", "label": "Round 7"}, {"type": "match", "round": "Round 7", "label": "Match 13", "player1": "MJ", "player2": "Silvia", "player3": "Hessa", "player4": "Fatima Q", "score": ""}, {"type": "match", "round": "Round 7", "label": "Match 14", "player1": "Nina", "player2": "Ornella", "player3": "Noura", "player4": "Nouf", "score": ""}];
+
+const matchesTbody = document.querySelector("#matchesTbl tbody");
+const scoresTbl = document.getElementById("scoresTbl");
+
+function makeRoundRow(label) {
+  const tr = document.createElement("tr");
+  tr.className = "roundHdr";
+  tr.innerHTML = `<td colspan="8">${label}</td>`;
+  matchesTbody.appendChild(tr);
+}
+
+function makeMatchRow(m, idx) {
+  const tr = document.createElement("tr");
+  tr.dataset.idx = idx;
+  tr.dataset.round = m.round || "";
+  tr.innerHTML = `
+    <td>${m.label||""}</td>
+    <td>${m.player1||""}</td>
+    <td>${m.player2||""}</td>
+    <td>VS</td>
+    <td></td>
+    <td>${m.player3||""}</td>
+    <td>${m.player4||""}</td>
+    <td><input class="score-in" type="tel" inputmode="numeric" placeholder="0-0" value="${m.score||""}" /></td>
+  `;
+  matchesTbody.appendChild(tr);
+}
+
+rawEntries.forEach((e, i) => {
+  if (e.type === "round") makeRoundRow(e.label);
+  if (e.type === "match") makeMatchRow(e, i);
+});
+
+function parseScore(s) {
+  if (!s) return [0,0,false];
+  const m = String(s).trim().match(/^\s*(\d+)\s*[-:]\s*(\d+)\s*$/);
+  if (!m) return [0,0,false];
+  return [parseInt(m[1],10), parseInt(m[2],10), true];
+}
+
+function compute() {
+  const pmap = Object.fromEntries(players.map(p => [p, Object.fromEntries(rounds.map(r=>[r,0]))]));
+  document.querySelectorAll("#matchesTbl tbody tr").forEach(tr => {
+    const r = tr.dataset.round || "";
+    const inEl = tr.querySelector("input.score-in");
+    if (!inEl) return;
+    const [a,b,ok] = parseScore(inEl.value);
+    inEl.classList.remove("bad","ok");
+    if (inEl.value.trim() !== "") inEl.classList.add(ok ? "ok":"bad");
+    if (!ok) return;
+    const tds = tr.querySelectorAll("td");
+    const p1 = tds[1].textContent.trim();
+    const p2 = tds[2].textContent.trim();
+    const p3 = tds[5].textContent.trim();
+    const p4 = tds[6].textContent.trim();
+    if (!r) return;
+    if (pmap[p1] && pmap[p1][r] !== undefined) pmap[p1][r] += a;
+    if (pmap[p2] && pmap[p2][r] !== undefined) pmap[p2][r] += a;
+    if (pmap[p3] && pmap[p3][r] !== undefined) pmap[p3][r] += b;
+    if (pmap[p4] && pmap[p4][r] !== undefined) pmap[p4][r] += b;
+  });
+  Array.from(scoresTbl.tBodies[0].rows).forEach(row => {
+    const player = row.dataset.player;
+    let total = 0;
+    Array.from(row.querySelectorAll("td.round")).forEach(td => {
+      const r = td.getAttribute("data-round");
+      const val = (pmap[player] && pmap[player][r]) || 0;
+      td.textContent = val;
+      total += val;
+    });
+    row.querySelector("td.total").textContent = total;
+  });
+}
+
+function saveLocal() {
+  const data = Array.from(document.querySelectorAll("#matchesTbl input.score-in")).map(el=>el.value);
+  localStorage.setItem("padelScoresMobile", JSON.stringify(data));
+}
+
+function loadLocal() {
+  const raw = localStorage.getItem("padelScoresMobile");
+  if (!raw) return;
+  try {
+    const arr = JSON.parse(raw);
+    const inputs = Array.from(document.querySelectorAll("#matchesTbl input.score-in"));
+    inputs.forEach((el,i) => { if (arr[i] !== undefined) el.value = arr[i]; });
+  } catch(_){}
+}
+
+matchesTbody.addEventListener("input", e => {
+  if (e.target && e.target.classList.contains("score-in")) {
+    compute(); saveLocal();
+  }
+});
+
+document.getElementById("clear").addEventListener("click", () => {
+  document.querySelectorAll("#matchesTbl input.score-in").forEach(el => el.value = "");
+  saveLocal(); compute();
+});
+
+loadLocal(); compute();
+</script>
+</body>
+</html>
